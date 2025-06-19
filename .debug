@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionList>
+  <Extension Id="com.mtg.overlay.panel">
+   <HostList>
+    <Host Name="AEFT" Port="7002"/>
+   </HostList>
+  </Extension>
+</ExtensionList>

@@ -1,0 +1,95 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 10px;
+    background-color: #2e2e2e;
+    color: #ffffff;
+}
+
+.container {
+    max-width: 300px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input, select, button {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #555;
+    background-color: #444;
+    color: #fff;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #0066cc;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #0052a3;
+}
+
+button:disabled {
+    background-color: #666;
+    cursor: not-allowed;
+}
+
+.search-results {
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #555;
+    background-color: #444;
+    margin-top: 10px;
+}
+
+.card-result {
+    padding: 10px;
+    border-bottom: 1px solid #555;
+    cursor: pointer;
+}
+
+.card-result:hover {
+    background-color: #555;
+}
+
+.card-result img {
+    width: 50px;
+    height: 70px;
+    object-fit: cover;
+    margin-right: 10px;
+    vertical-align: top;
+}
+
+.card-info {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.status {
+    margin-top: 10px;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.status.success {
+    background-color: #4CAF50;
+}
+
+.status.error {
+    background-color: #f44336;
+}
+
+.status.info {
+    background-color: #2196F3;
+}
