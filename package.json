@@ -10,6 +10,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@saeris/typeface-beleren-bold": "^1.0.1",
     "jimp": "^1.6.0"
   }
 }
