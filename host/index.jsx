@@ -1,25 +1,37 @@
 // After Effects ExtendScript for MTG Card Helper - Updated with actual image import
 
-function importMTGCardWithImage(settingsJson) {
+function importMTGCardWithImage(settingsStr) {
     try {
-        var settings = JSON.parse(settingsJson);
-        
-        // Ensure we have an active composition
-        if (!app.project.activeItem || !(app.project.activeItem instanceof CompItem)) {
-            return "Error: No active composition found";
-        }
-        
-        var comp = app.project.activeItem;
-        
-        // Import the actual image file
-        var cardLayer = importCardImageFromFile(settings, comp);
-        
-        if (cardLayer) {
-            return "success";
-        } else {
-            return "Error: Failed to create card layer";
-        }
-        
+        var parts = settingsStr.split('|');
+        var cardName = parts[0];
+        var imagePath = parts[1];
+        var width = Number(parts[2]);
+        var height = Number(parts[3]);
+        var position = parts[4]; // Parse further if needed
+        var settings = {
+            cardName: cardName,
+            imagePath: imagePath,
+            width: width,
+            height: height,
+            position: position || "center" // Default to center if not specified
+        };
+            
+            // Ensure we have an active composition
+            if (!app.project.activeItem || !(app.project.activeItem instanceof CompItem)) {
+                return "Error: No active composition found";
+            }
+            
+            var comp = app.project.activeItem;
+            
+            // Import the actual image file
+            var cardLayer = importCardImageFromFile(settings, comp);
+            
+            if (cardLayer) {
+                return "success";
+            } else {
+                return "Error: Failed to create card layer";
+            }
+            
     } catch (error) {
         return "Error: " + error.toString();
     }
